@@ -1,0 +1,376 @@
+{
+	"variables": [],
+	"info": {
+		"name": "HW5",
+		"_postman_id": "9fbe5f57-40e5-2ae6-0f38-13e59b6884ce",
+		"description": "Tests the proxy that interfaces with the API baas. Information about movies is stored in the baas.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET /movies/list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://colechristenson11-test.apigee.net/hw5/movies/list",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Shows all of the movies in the baas"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /movies/list?reviews=true",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://colechristenson11-test.apigee.net/hw5/movies/list?reviews=true",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Shows all of the movies in the baas and their reviews"
+			},
+			"response": []
+		},
+		{
+			"name": "GETS /movies/year/2009",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"response = JSON.parse(responseBody)",
+							"tests[\"Status code 200\"] = responseCode.code === 200;",
+							"console.log(responseBody)"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://colechristenson11-test.apigee.net/hw5/movies/year/2009",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Gets the movies from the year 2009"
+			},
+			"response": []
+		},
+		{
+			"name": "GETS /movies/year/2009?reviews=true",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"response = JSON.parse(responseBody)",
+							"tests[\"Status code 200\"] = responseCode.code === 200;",
+							"console.log(responseBody)"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://colechristenson11-test.apigee.net/hw5/movies/year/2009?reviews=true",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Gets the movies from the year 2009"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /movies/year/1997",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://colechristenson11-test.apigee.net/hw5/movies/year/1997",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Shows all movies in the baas from 1997"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /movies/year/1997?review=true",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://colechristenson11-test.apigee.net/hw5/movies/year/1997?reviews=true",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Shows all movies in the baas from 1997"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /movies/year/1998",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://colechristenson11-test.apigee.net/hw5/movies/year/1998 ",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Displays what happens when there are no movies in a year that is requested"
+			},
+			"response": []
+		},
+		{
+			"name": "GETS /movies/actor/Leonardo DiCaprio",
+			"request": {
+				"url": "https://colechristenson11-test.apigee.net/hw5/movies/actor/Leonardo DiCaprio",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET /movies/actors/Leonardo DeCaprio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://colechristenson11-test.apigee.net/hw5/movies/actor/Leonardo DiCaprio?reviews=true",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Finds all movies with Leonardo DeCaprio"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /movies/actors/Will Ferrell",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://colechristenson11-test.apigee.net/hw5/movies/actor/Will Ferrell",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Displays what happens when you have an unsucessful actor search"
+			},
+			"response": []
+		},
+		{
+			"name": "POST /movies/addmovie",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://colechristenson11-test.apigee.net/hw5/movies/addmovie?name=Titanic&year=1997&actors=[\"Leonardo DiCaprio\", \"Kate Winslet\", \"Billy Zane\"]",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Will successfully add a movie to the baas"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /movies/titile/titanic",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://colechristenson11-test.apigee.net/TestHW4/movies/title/Titanic",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Gets the title titanic"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETES /movies/title/titanic",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://colechristenson11-test.apigee.net/hw5/movies/deletemovie/Titanic",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": "Deletes the movie titanic from the baas"
+			},
+			"response": []
+		},
+		{
+			"name": "GETS /movies/title/titanic",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://colechristenson11-test.apigee.net/TestHW4/movies/title/Titanic",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Trys to get titanic again after it has been deleted"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETES /movies/deletemovie/Evolution",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://colechristenson11-test.apigee.net/TestHW4/movies/deletemovie/Evolution",
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Tries to delete the movie evolution"
+			},
+			"response": []
+		},
+		{
+			"name": "POST /reviews/addreview",
+			"request": {
+				"url": "https://colechristenson11-test.apigee.net/hw5/reviews/addreview?name=Signs Review&quote=OK&reviewer_name=Cole&stars=3&movie=Signs",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST /reviews/addreview     invlaid",
+			"request": {
+				"url": "https://colechristenson11-test.apigee.net/hw5/reviews/addreview?name=Signs Review&quote=OK&reviewer_name=Cole&stars=3&movie=Arrival",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET /movies/title/Arrival?reviews=true",
+			"request": {
+				"url": "https://colechristenson11-test.apigee.net/hw5/movies/title/Arrival?reviews=true",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
